@@ -1,5 +1,7 @@
 "use client"
 
+import * as gtag from '@/lib/gtag'
+
 interface CTASectionProps {
   darkMode: boolean
   onOpenModal: () => void
@@ -29,7 +31,14 @@ export default function CTASection({ darkMode, onOpenModal }: CTASectionProps) {
         </p>
         <div className="flex justify-center">
           <button
-            onClick={onOpenModal}
+            onClick={() => {
+              gtag.event({
+                action: 'click',
+                category: 'CTA',
+                label: 'Schedule Consultation - CTA Section',
+              });
+              onOpenModal();
+            }}
             className="bg-emerald-500 text-white px-10 py-4 rounded-lg text-lg hover:bg-emerald-600 transition-all hover:scale-105 shadow-lg hover:shadow-emerald-500/25 cursor-pointer"
           >
             Schedule a Consultation

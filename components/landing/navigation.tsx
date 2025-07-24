@@ -37,7 +37,12 @@ export default function Navigation({ darkMode, setDarkMode, mobileMenuOpen, setM
           <div className="flex items-center space-x-2">
             {/* Logo with enhanced JPG easter egg and click functionality */}
             <button 
-              onClick={scrollToTop}
+              onClick={() => {
+                if (mobileMenuOpen) {
+                  setMobileMenuOpen(false)
+                }
+                scrollToTop()
+              }}
               className="relative group cursor-pointer transition-transform hover:scale-105"
               aria-label="Back to top"
             >
@@ -45,15 +50,15 @@ export default function Navigation({ darkMode, setDarkMode, mobileMenuOpen, setM
                 {/* Normal state - hide on desktop hover OR mobile menu open */}
                 <span className={`text-emerald-500 text-2xl transition-all duration-500 ease-in-out transform ${
                   mobileMenuOpen ? 'md:opacity-100 md:scale-100 opacity-0 scale-75' : 'opacity-100 scale-100'
-                } group-hover:opacity-0 group-hover:scale-75`}>JPG</span>
+                } md:group-hover:opacity-0 md:group-hover:scale-75`}>JPG</span>
                 <span className={`ml-1 text-2xl transition-all duration-500 ease-in-out transform ${
                   mobileMenuOpen ? 'md:opacity-100 md:scale-100 opacity-0 scale-75' : 'opacity-100 scale-100'
-                } group-hover:opacity-0 group-hover:scale-75`}>Tech Solutions</span>
+                } md:group-hover:opacity-0 md:group-hover:scale-75`}>Tech Solutions</span>
                 
                 {/* Easter egg state - show on desktop hover OR mobile menu open */}
                 <span className={`absolute left-0 font-mono text-2xl text-emerald-400 flex items-center whitespace-nowrap transition-all duration-500 ease-in-out transform ${
                   mobileMenuOpen ? 'md:opacity-0 md:scale-75 opacity-100 scale-100' : 'opacity-0 scale-75'
-                } group-hover:opacity-100 group-hover:scale-100`}>
+                } md:group-hover:opacity-100 md:group-hover:scale-100`}>
                   <ImageIcon className="w-5 h-5 mr-1 transition-transform duration-500 flex-shrink-0" />
                   <span className="text-slate-600 dark:text-slate-400 transition-colors duration-500">tech-solutions</span>
                   <span className="text-emerald-500 transition-colors duration-500">.jpg</span>

@@ -108,6 +108,9 @@ export default function Footer({ darkMode, onServiceExpand, onOpenModal }: Foote
           }`}
         >
           <p>&copy; 2024 JPG Tech Solutions Ltd. Building smart software solutions that grow with you.</p>
+          <p className="mt-2 text-xs opacity-80">
+            This site uses Google Analytics to understand how visitors interact with our website. By using this site, you agree to our use of cookies for analytics purposes. For more information, please see our Privacy Policy.
+          </p>
         </div>
       </div>
     </footer>

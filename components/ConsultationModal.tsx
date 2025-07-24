@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { X } from 'lucide-react';
+import * as gtag from '@/lib/gtag'
 
 interface ConsultationModalProps {
   isOpen: boolean;
@@ -133,6 +134,11 @@ export default function ConsultationModal({ isOpen, onClose }: ConsultationModal
 
       if (response.ok) {
         setSubmitStatus('success');
+        gtag.event({
+          action: 'submit_form',
+          category: 'Contact',
+          label: 'Consultation Request',
+        });
       } else {
         setSubmitStatus('error');
       }

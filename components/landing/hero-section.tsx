@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { ChevronRight, ArrowRight } from "lucide-react"
+import * as gtag from '@/lib/gtag'
 
 interface HeroSectionProps {
   darkMode: boolean
@@ -73,14 +74,28 @@ export default function HeroSection({ darkMode, onOpenModal }: HeroSectionProps)
           </p>
           <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
             <button 
-              onClick={() => scrollToSection('services')}
+              onClick={() => {
+                gtag.event({
+                  action: 'click',
+                  category: 'CTA',
+                  label: 'Explore Our Services - Hero',
+                });
+                scrollToSection('services');
+              }}
               className="bg-emerald-500 text-white px-8 py-4 rounded-lg hover:bg-emerald-600 transition-all hover:scale-105 flex items-center justify-center group shadow-lg hover:shadow-emerald-500/25 cursor-pointer"
             >
               Explore Our Services
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
             <button
-              onClick={() => scrollToSection('process')}
+              onClick={() => {
+                gtag.event({
+                  action: 'click',
+                  category: 'CTA',
+                  label: 'Learn More - Hero',
+                });
+                scrollToSection('process');
+              }}
               className={`px-8 py-4 rounded-lg border-2 transition-all hover:scale-105 cursor-pointer ${
                 darkMode
                   ? "border-[#333333] hover:border-[#3A3A3A] hover:bg-[#262626]/50"
