@@ -30,6 +30,16 @@ npm run build
 npm run start
 ```
 
+## Google Analytics Setup
+
+Create a `.env.local` file in your project root with the following content:
+
+```
+NEXT_PUBLIC_GA_MEASUREMENT_ID=G-C4L9Q51107
+```
+
+This is required for Google Analytics integration. Do not commit `.env.local` to version control.
+
 ## License
 
 © 2024 JPG Tech Solutions Ltd. All rights reserved.
