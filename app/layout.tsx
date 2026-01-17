@@ -3,6 +3,7 @@ import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
 import "../styles/globals.css";
 import GoogleAnalytics from '@/components/GoogleAnalytics'
+import { Analytics } from '@vercel/analytics/next'
 
 export const metadata: Metadata = {
   title: "JPG Tech Solutions - Smart Software Solutions for Growing Businesses",
@@ -32,6 +33,7 @@ html {
       <body>
         <GoogleAnalytics GA_MEASUREMENT_ID={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID!} />
         {children}
+        <Analytics />
       </body>
     </html>
   );
