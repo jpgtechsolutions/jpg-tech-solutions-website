@@ -107,7 +107,7 @@ export default function Footer({ darkMode, onServiceExpand, onOpenModal }: Foote
             darkMode ? "border-[#262626] text-slate-400" : "border-slate-200 text-slate-600"
           }`}
         >
-          <p>&copy; 2025 JPG Tech Solutions Ltd. Building smart software solutions that grow with you.</p>
+          <p>&copy; 2026 JPG Tech Solutions Ltd. Building smart software solutions that grow with you.</p>
           <p className="mt-2 text-xs opacity-80">
             This site uses Google Analytics to understand how visitors interact with our website. By using this site, you agree to our use of cookies for analytics purposes. For more information, please see our Privacy Policy.
           </p>

@@ -33,7 +33,7 @@ npm run start
 
 ## License
 
-© 2025 JPG Tech Solutions Ltd. All rights reserved.
+© 2026 JPG Tech Solutions Ltd. All rights reserved.
 
 ---
 
